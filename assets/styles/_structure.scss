@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    background-color: #b9b9b9aa;
+  }
+
+  html,
+body {
+  scroll-behavior: smooth;
+}
+
+.titre {
+    font-size: 60PX;
+    color: #333;
+}
+.pad {
+    padding: 15px;
+
+}
+
+.Ltitre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-bottom:50px ; 
+}
+
+.ins-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.inscription {
+   
+    background-color: #8797b1;
+    color: $white;
+  
+}
+
+.connexion {
+    
+    background-color: #212528;
+    color: $white;
+   
+}
+
+h1 { color: red;
+font-size: 40px;
+font-weight: 600;}

@@ -3,7 +3,7 @@
 namespace App\Controller\Security;
 
 use App\Entity\Joueur;
-use app\Form\JoueurType;
+use App\Form\JoueurType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
