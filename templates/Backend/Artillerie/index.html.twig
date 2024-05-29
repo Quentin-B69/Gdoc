@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Administration des Artilleries
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Administration des Artilleries</h1>
+		<a href="{{ path('app_artillerie_new') }}" class="">Créer un produit</a>
+		<div>
+			<table>
+				<thead>
+					<tr scope="row">
+						<th scope="col" data-field="id">ID</th>
+						<th scope="col" data-field="nom">Nom</th>
+						<th scope="col" data-field="tier">Tier</th>
+						<th scope="col" data-field="poids">Poids</th>
+						<th scope="col" data-field="image">Image</th>
+					</tr>
+
+				</thead>
+				<tbody>
+					{% for artillerie in artilleries %}
+						<tr>
+							<td>{{artillerie.id}}</td>
+							<td>{{artillerie.nom}}</td>
+							<td>{{artillerie.tier}}</td>
+							<td>{{artillerie.poids}}</td>
+							<td>
+								<img src="{{ vich_uploader_asset(artillerie) }}" alt="{{ artillerie.nom }}" loading="lazy">
+							</td>
+							<td>
+								<div>
+									<a href="{{ path('app_artillerie_edit', {'id': artillerie.id}) }}" class="">Modifier</a>
+									{% include "Backend/Artillerie/_delete_form.html.twig" %}
+								</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td>Pas d'artillerie</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
