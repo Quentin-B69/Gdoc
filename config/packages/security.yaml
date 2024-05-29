@@ -22,13 +22,13 @@ security:
   # Easy way to control access for large sections of your site
   # Note: Only the *first* access control that matches will be used
   access_control:
-    # - { path: ^/admin, roles: ROLE_ADMIN }
-    # - { path: ^/officier, roles: ROLE_OFFI }
-    # - { path: ^/joueurs, roles: ROLE_JOUEURS }
-    # - { path: ^/login, roles: PUBLIC_ACCESS }
-    # - { path: ^/register, roles: PUBLIC_ACCESS }
-    # - { path: ^/, roles: ROLE_USER }
-    # - { path: ^/profile, roles: ROLE_USER }
+    - { path: ^/admin, roles: ROLE_ADMIN }
+    - { path: ^/officier, roles: ROLE_OFFI }
+    - { path: ^/joueur, roles: ROLE_JOUEUR }
+    - { path: ^/login, roles: PUBLIC_ACCESS }
+    - { path: ^/register, roles: PUBLIC_ACCESS }
+    - { path: ^/, roles: ROLE_USER }
+    - { path: ^/profile, roles: ROLE_USER }
 
 when@test:
   security:

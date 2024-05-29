@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-#[Route('/artillerie')]
+#[Route('/admin/artillerie')]
 class ArtillerieController extends AbstractController
 {
     #[Route('', name: 'app_artillerie_index', methods: ['GET'])]
