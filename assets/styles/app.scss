@@ -1,5 +1,30 @@
-@import "./base.scss";
+@import "./utils/base.scss";
 
-@import "./variables";
+@import "./utils/variables";
 
-@import './structure';
+
+
+@import "./base/normalize";
+
+// @import "./layout/footer/???";
+
+@import "./layout/headerlog/mobile";
+@import "./layout/headerlog/tablette";
+@import "./layout/headerlog/desktop";
+
+@import "./layout/header/mobile";
+@import "./layout/header/tablette";
+@import "./layout/header/desktop";
+
+
+@import "./layout/footer/mobile";
+@import "./layout/footer/tablette";
+@import "./layout/footer/desktop";
+
+@import "./pages/inscription";
+
+@import "./custom/custom.scss";
+@import "~bootstrap/scss/bootstrap";
+
+
+@import './all'

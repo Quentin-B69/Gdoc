@@ -56,7 +56,7 @@ class ArtillerieController extends AbstractController
 
             $this->addFlash('success', 'Artillerie modifié avec succès');
 
-            return $this->redirectToRoute('produit_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('admin.artillerie.index', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->render('Backend/Artillerie/edit.html.twig', [

@@ -13,6 +13,7 @@ use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: JoueurRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'Cet email est déjà utilisé par un autre compte')]
+#[ORM\HasLifecycleCallbacks]
 class Joueur implements PasswordAuthenticatedUserInterface
 {
 
@@ -46,7 +47,10 @@ class Joueur implements PasswordAuthenticatedUserInterface
     private ?string $password = null;
 
     #[ORM\Column]
-    private ?int $level = null;
+    private ?int $level = 1;
+
+    #[ORM\ManyToOne(inversedBy: 'gradejoueur')]
+    private ?Grade $grade = null;
 
     public function getId(): ?int
     {
@@ -109,6 +113,18 @@ class Joueur implements PasswordAuthenticatedUserInterface
     public function setLevel(int $level): static
     {
         $this->level = $level;
+
+        return $this;
+    }
+
+    public function getGrade(): ?Grade
+    {
+        return $this->grade;
+    }
+
+    public function setGrade(?Grade $grade): static
+    {
+        $this->grade = $grade;
 
         return $this;
     }

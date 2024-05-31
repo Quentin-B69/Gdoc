@@ -5,7 +5,7 @@ $tertiary: #212528;
 $autre1: #6E7683;
 $autre2: #585E6B;
 
-$barckground: #b9b9b9aa;
+
 
 $white: #f5f5f5;
 
@@ -18,3 +18,17 @@ $green: #6AA84F;
 $yellow: #F1C232;
 $red: #EB0B0B;
 
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    ;
+    // background-color: #ff0000aa;
+  }
+
+  html,
+body {
+  background-color: #b9b9b9 !important;
+  scroll-behavior: smooth;
+}
