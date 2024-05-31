@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Modifier un Grade
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Modifier un Grade</h1>
+
+		{% include "Backend/Grade/_form.html.twig" with {button_label: 'Modifier'} %}
+		<a href=" {{ path('app.grade.index') }}" class="">
+			Retour à la liste</a>
+	</section>
+{% endblock %}

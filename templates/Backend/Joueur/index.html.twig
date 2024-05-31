@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+	Administration des Joueurs
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Administration des Joueurs</h1>
+		<div>
+			<table>
+				<thead>
+					<tr scope="row">
+						<th scope="col" data-field="id">ID</th>
+						<th scope="col" data-field="pseudo">pseudo</th>
+						<th scope="col" data-field="discord">discord</th>
+						<th scope="col" data-field="email">email</th>
+						<th scope="col" data-field="grade">grade</th>
+						{# <th scope="col" data-field="status">status</th> #}
+						<th scope="col" data-field="createdAt">date creation</th>
+						<th scope="col" data-field="updatedAt">date mise a jour</th>
+						<th scope="col">
+							Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for joueur in joueurs %}
+						<tr scope="row">
+							<td scope="col">
+								{{ joueur.id }}
+							</td>
+							<td scope="col">
+								{{ joueur.pseudo }}
+							</td>
+							<td scope="col">
+								{{ joueur.discord }}
+							</td>
+							<td scope="col">
+								{{ joueur.email }}
+							</td>
+							<td scope="col">
+								{{ joueur.grade.id }}
+							</td>
+							{# <td scope="col">
+													{{ joueur.status }}
+												</td> #}
+							<td scope="col">
+								{{ joueur.createdAt ? joueur.createdAt|date('Y-m-d H:i:s') : ''}}
+							</td>
+							<td scope="col">
+								{{ joueur.updatedAt ? joueur.updatedAt|date('Y-m-d H:i:s') : '' }}
+							</td>
+							<td scope="col">
+								<div>
+									<a href="{{ path('admin.joueur.edit', {id: joueur.id}) }}" class="">Modifier</a>
+									<form action="{{ path('admin.joueur.delete', {id: joueur.id}) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer ce joueur')">
+										<input type="hidden" name="token" value="{{ csrf_token('delete'~ joueur.id) }}">
+										<button type="submit" class="">Supprimer</button>
+									</form>
+								</div>
+							</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}

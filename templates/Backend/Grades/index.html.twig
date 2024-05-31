@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Administration des Grade
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	<section>
+		<h1>Administration des Grade</h1>
+		<a href="{{ path('admin.artillerie.new') }}" class="">Créer un grade</a>
+		<div>
+			<table>
+				<thead>
+					<tr scope="row">
+						<th scope="col" data-field="id">ID</th>
+						<th scope="col" data-field="nom">Nom</th>
+
+					</tr>
+
+				</thead>
+				<tbody>
+					{% for grade in grades %}
+						<tr>
+							<td>{{grade.id}}</td>
+							<td>{{grade.nom}}</td>
+							<td>
+								<div>
+									<a href="{{ path('admin.grade.edit', {'id': grade.id}) }}" class="">Modifier</a>
+									{% include "Backend/Grade/_delete_form.html.twig" %}
+								</div>
+							</td>
+						</tr>
+					{% else %}
+						<tr>
+							<td>Pas de grade</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</section>
+{% endblock %}
