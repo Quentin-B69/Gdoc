@@ -29,7 +29,7 @@ class Artillerie
     #[ORM\Column]
     private ?int $poids = null;
 
-    #[Vich\UploadableField(mapping: 'artillerie', fileNameProperty: 'imageName')]
+    #[Vich\UploadableField(mapping: 'artilleries', fileNameProperty: 'imageName')]
     #[Assert\Image(
         mimeTypes: ['image/*'],
         maxSize: '3M',

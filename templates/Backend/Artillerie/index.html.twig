@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Administration des Artilleries
+	Administration des artillerie
 	{{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<section>
-		<h1>Administration des Artilleries</h1>
-		<a href="{{ path('app_artillerie_new') }}" class="">Créer une Arti</a>
+		<h1>Administration des artilleries</h1>
+		<a href="{{ path('admin.artillerie.new') }}" class="btn btn-primary my-2">Créer une Arti</a>
 		<div>
 			<table>
 				<thead>
@@ -33,7 +33,7 @@
 							</td>
 							<td>
 								<div>
-									<a href="{{ path('app_artillerie_edit', {'id': artillerie.id}) }}" class="">Modifier</a>
+									<a href="{{ path('admin.artillerie.edit', {'id':artillerie.id}) }}" class="">Modifier</a>
 									{% include "Backend/Artillerie/_delete_form.html.twig" %}
 								</div>
 							</td>

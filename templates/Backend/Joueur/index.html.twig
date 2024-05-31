@@ -16,15 +16,16 @@
 						<th scope="col" data-field="pseudo">pseudo</th>
 						<th scope="col" data-field="discord">discord</th>
 						<th scope="col" data-field="email">email</th>
-						<th scope="col" data-field="roles">roles</th>
-						<th scope="col" data-field="status">status</th>
+						<th scope="col" data-field="grade">grade</th>
+						{# <th scope="col" data-field="status">status</th> #}
 						<th scope="col" data-field="createdAt">date creation</th>
 						<th scope="col" data-field="updatedAt">date mise a jour</th>
-						<th scope="col">Actions</th>
+						<th scope="col">
+							Actions</th>
 					</tr>
 				</thead>
 				<tbody>
-					{% for user in users %}
+					{% for joueur in joueurs %}
 						<tr scope="row">
 							<td scope="col">
 								{{ joueur.id }}
@@ -39,16 +40,16 @@
 								{{ joueur.email }}
 							</td>
 							<td scope="col">
-								{{ joueur.roles }}
+								{{ joueur.grade.id }}
+							</td>
+							{# <td scope="col">
+													{{ joueur.status }}
+												</td> #}
+							<td scope="col">
+								{{ joueur.createdAt ? joueur.createdAt|date('Y-m-d H:i:s') : ''}}
 							</td>
 							<td scope="col">
-								{{ joueur.status }}
-							</td>
-							<td scope="col">
-								{{ joueur.createdAt }}
-							</td>
-							<td scope="col">
-								{{ joueur.updatedAt }}
+								{{ joueur.updatedAt ? joueur.updatedAt|date('Y-m-d H:i:s') : '' }}
 							</td>
 							<td scope="col">
 								<div>

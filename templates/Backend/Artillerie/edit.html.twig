@@ -10,7 +10,7 @@
 		<h1>Modifier une Artillerie</h1>
 
 		{% include "Backend/Artillerie/_form.html.twig" with {button_label: 'Modifier'} %}
-		<a href=" {{ path('app_artillerie_index') }}" class="">
+		<a href=" {{ path('admin.artillerie.index') }}" class="">
 			Retour à la liste</a>
 	</section>
 {% endblock %}

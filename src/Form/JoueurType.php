@@ -70,10 +70,10 @@ class JoueurType extends AbstractType
         if ($options['isAdmin']) {
             $builder->remove('password')
                 ->add('grades', ChoiceType::class, [
-                    'label' => 'Rôles',
+                    'label' => 'Grades',
                     'choices' => [
                         'Administrateur' => 'GRADE_ADMIN',
-                        'Officier' => 'GRADE_OFFI',
+                        'Officier' => 'GRADE_OFFICIER_homeless',
                         'Joueur' => 'GRADE_JOUEUR',
                     ],
                     'multiple' => true,

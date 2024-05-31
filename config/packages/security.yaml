@@ -9,26 +9,34 @@ security:
     dev:
       pattern: ^/(_(profiler|wdt)|css|images|js)/
       security: false
-    main:
-      lazy: true
-      provider: users_in_memory
+    # main:
+    #   lazy: true
+    #   provider: users_in_memory
+    #   form_login:
+    #     login_path: app.login
+    #     check_path: app.login
+    #     enable_csrf: true
+    #     use_referer: true
+    #   logout:
+    #     path: /logout
+    #     target: /
 
-      # activate different ways to authenticate
-      # https://symfony.com/doc/current/security.html#the-firewall
+    # activate different ways to authenticate
+    # https://symfony.com/doc/current/security.html#the-firewall
 
-      # https://symfony.com/doc/current/security/impersonating_user.html
-      # switch_user: true
+    # https://symfony.com/doc/current/security/impersonating_user.html
+    # switch_user: true
 
   # Easy way to control access for large sections of your site
   # Note: Only the *first* access control that matches will be used
   access_control:
-    - { path: ^/admin, grades: GRADE_ADMIN }
-    - { path: ^/officier, grades: GRADE_OFFI }
-    - { path: ^/joueur, grades: GRADE_JOUEUR }
-    - { path: ^/login, grades: GRADE_ACCESS }
-    - { path: ^/register, grades: GRADE_ACCESS }
-    - { path: ^/, grades: GRADE_USER }
-    - { path: ^/profile, grades: GRADE_USER }
+    - { path: ^/admin, roles: GRADE_ADMIN }
+    - { path: ^/officier, roles: GRADE_OFFICIER_homeless }
+    - { path: ^/joueur, roles: GRADE_JOUEUR }
+    - { path: ^/register, roles: ROLE_PUBLIC_ACCESS }
+    - { path: ^/login, roles: GRADE_PUBLIC_ACCESS }
+    - { path: ^/, roles: GRADE_USER }
+    - { path: ^/profile, roles: GRADE_USER }
 
 when@test:
   security:

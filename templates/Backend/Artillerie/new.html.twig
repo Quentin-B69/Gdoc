@@ -1,16 +1,16 @@
 {% extends "base.html.twig" %}
 
 {% block title %}
-	Crée un Grade
+	Crée une Artillerie
 	{{ parent() }}
 {% endblock %}
 
 {% block body %}
 	<section>
-		<h1 class="">Crée un Grade</h1>
+		<h1 class="">Crée une Artillerie</h1>
 
-		{% include "Backend/Grade/_form.html.twig" with {button_label: 'Créer'} %}
-		<a href=" {{ path('app_grade_index') }}" class="">
+		{% include "Backend/Artillerie/_form.html.twig" with {button_label: 'Créer'} %}
+		<a href=" {{ path('admin.artillerie.index') }}" class="">
 			Retour à la liste</a>
 	</section>
 {% endblock %}

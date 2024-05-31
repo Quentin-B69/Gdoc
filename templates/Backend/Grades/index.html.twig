@@ -8,7 +8,7 @@
 {% block body %}
 	<section>
 		<h1>Administration des Grade</h1>
-		<a href="{{ path('app_artillerie_new') }}" class="">Créer un grade</a>
+		<a href="{{ path('admin.artillerie.new') }}" class="">Créer un grade</a>
 		<div>
 			<table>
 				<thead>
@@ -26,7 +26,7 @@
 							<td>{{grade.nom}}</td>
 							<td>
 								<div>
-									<a href="{{ path('app_grade_edit', {'id': grade.id}) }}" class="">Modifier</a>
+									<a href="{{ path('admin.grade.edit', {'id': grade.id}) }}" class="">Modifier</a>
 									{% include "Backend/Grade/_delete_form.html.twig" %}
 								</div>
 							</td>

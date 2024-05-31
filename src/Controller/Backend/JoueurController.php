@@ -25,7 +25,7 @@ class JoueurController extends AbstractController
     public function index(): Response
     {
         return $this->render('Backend/Joueur/index.html.twig', [
-            'joueur' => $this->joueurRepo->findAll(),
+            'joueurs' => $this->joueurRepo->findAll(),
         ]);
     }
 
